@@ -4,8 +4,10 @@ import java.awt.AWTException;
 import java.awt.Robot;
 import java.awt.event.KeyEvent;
 import java.io.IOException;
+import java.util.List;
 
 import org.apache.poi.xssf.usermodel.XSSFRow;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -13,6 +15,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import basepackage.Base_Class;
+import utility.ExcelUtil;
 
 public class User_Management_page extends Base_Class {
 
@@ -25,8 +28,9 @@ public class User_Management_page extends Base_Class {
 	@FindBy(xpath = "/html/body/app-root/div/div/app-user-management/div/div[1]/h4")
 	WebElement page_title;
 
-	@FindBy(xpath = "/html/body/app-root/div/div/app-user-group/div/div[2]/div/form/div/div/div/div/input")
+	@FindBy(xpath = "//*[@id=\"search\"]")
 	WebElement Search_input;
+	
 
 	@FindBy(xpath = "/html/body/app-root/div/div/app-user-group/div/div[2]/div/form/div/div/div/div/div/button")
 	WebElement Search_button;
@@ -91,11 +95,33 @@ public class User_Management_page extends Base_Class {
 	@FindBy(xpath="//kendo-dropdownlist[@class='form-control-sm form-control w-100 k-widget k-dropdown k-header ng-touched ng-valid ng-dirty']/span[@class='k-dropdown-wrap k-state-default']")
 	WebElement employee;
 	
+	@FindBy(xpath = "/html/body/app-root/div/div/app-user-management/div/div[2]/div/div/kendo-grid")
+	WebElement Grid;
+	
+	/*
+	 * @FindBy(tagName = "td") List<WebElement> tdcount;
+	 */
+	
+	@FindBy(xpath = "/html/body/app-root/div/div/app-user-group/div/div[2]/div/form/div[2]/button[2]")
+	WebElement btn_Delete;
+
+	@FindBy(xpath = "/html/body/app-root/div/div/app-user-group/kendo-dialog/div[2]/kendo-dialog-actions/button[1]")
+	WebElement btn_Delete_Yes;
+	
+	@FindBy(xpath = "/html/body/app-root/div/div/app-user-group/kendo-dialog/div[2]/kendo-dialog-actions/button[2]")
+	WebElement btn_Delete_No;
+	
+	
 	public User_Management_page() throws IOException {
 		super();
 		PageFactory.initElements(driver, this);
 	}
 
+	public void clicklink()
+	{
+		User_management.click();
+	}
+	
 	public String verify_page_title() {
 		User_management.click();
 		String pagetitle = page_title.getText();
@@ -196,6 +222,51 @@ public class User_Management_page extends Base_Class {
 		product_table.findElement(By.xpath("/html/body/app-root/div/div/app-user-management/div/div[2]/form/div/div[1]/kendo-splitter/kendo-splitter-pane[2]/div/div/div[1]/kendo-grid/div/kendo-grid-list/div/div[1]/table/tbody/tr[2]/td[2]/kendo-grid/div/kendo-grid-list/div/div[1]/table/tbody/tr[1]/td[1]/label/input")).click();
 		//product1.click();
 
+	}
+
+	public void Verify_updateUserGroup(XSSFRow row) throws Exception {
+		User_management.click();
+		//Verify_addUserManagement(row);
+		// ExcelUtil.setExcelFileSheet("UserGroupUpdate");
+		ExcelUtil.setExcelFileSheet("UserManagUpdate");
+		ExcelUtil.setRowNumber(2);
+		// System.out.println(row.getRowNum());
+
+		User_management.click();
+
+		Search_input.clear();
+		Search_input.sendKeys(ExcelUtil.getRowData(2).getCell(0).toString());
+
+		Grid.click();
+		
+	}
+
+	public void Verify_searchAndDeleteUsermanage() throws Exception {
+		
+		/* User_management.click(); */
+	
+			XSSFSheet sheet = ExcelUtil.setExcelFileSheet("UserManagDelete");
+			
+			for (int i = 1; i < sheet.getLastRowNum()-1; i++) {
+				
+				XSSFRow row = ExcelUtil.getRowData(i);
+				System.out.print(row);
+				String UserManage = row.getCell(0).toString(); 
+				sleep();
+				Search_input.click();
+				sleep();
+				Search_input.sendKeys(UserManage);
+				
+				driver.findElement(By.xpath("//td[@role='gridcell']")).click();
+				btn_Delete.click();
+		  
+				btn_Delete_Yes.click();
+		  
+			}
+			
+			
+	 
+		
 	}
 
 }
