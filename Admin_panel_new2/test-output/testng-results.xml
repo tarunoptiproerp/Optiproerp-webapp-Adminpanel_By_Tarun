@@ -1,117 +1,106 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="8" passed="8" failed="0" skipped="0">
+<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-10-14T12:11:38 IST" name="Default suite" finished-at="2021-10-14T12:13:41 IST" duration-ms="122728">
+  <suite started-at="2021-10-19T19:40:12 IST" name="Default suite" finished-at="2021-10-19T19:41:27 IST" duration-ms="74653">
     <groups>
     </groups>
-    <test started-at="2021-10-14T12:11:38 IST" name="Default test" finished-at="2021-10-14T12:13:41 IST" duration-ms="122728">
-      <class name="testcases.User_Group_Testcases">
-        <test-method is-config="true" signature="initExtentreport()[pri:0, instance:testcases.User_Group_Testcases@53aac487]" started-at="2021-10-14T12:11:38 IST" name="initExtentreport" finished-at="2021-10-14T12:11:39 IST" duration-ms="291" status="PASS">
+    <test started-at="2021-10-19T19:40:12 IST" name="Default test" finished-at="2021-10-19T19:41:27 IST" duration-ms="74653">
+      <class name="testcases.UserManagePage_Testcases">
+        <test-method is-config="true" signature="initExtentreport()[pri:0, instance:testcases.UserManagePage_Testcases@506ae4d4]" started-at="2021-10-19T19:40:12 IST" name="initExtentreport" finished-at="2021-10-19T19:40:13 IST" duration-ms="394" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initExtentreport -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:testcases.User_Group_Testcases@53aac487]" started-at="2021-10-14T12:11:39 IST" name="setup" finished-at="2021-10-14T12:11:44 IST" duration-ms="5242" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:testcases.UserManagePage_Testcases@506ae4d4]" started-at="2021-10-19T19:40:13 IST" name="setup" finished-at="2021-10-19T19:40:29 IST" duration-ms="15898" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="Verify_menus()[pri:1, instance:testcases.User_Group_Testcases@53aac487]" started-at="2021-10-14T12:11:44 IST" name="Verify_menus" finished-at="2021-10-14T12:11:49 IST" duration-ms="5458" status="PASS">
+        <test-method signature="Verify_AddUserManagement()[pri:1, instance:testcases.UserManagePage_Testcases@506ae4d4]" started-at="2021-10-19T19:40:29 IST" name="Verify_AddUserManagement" finished-at="2021-10-19T19:41:26 IST" duration-ms="57679" status="FAIL">
+          <exception class="org.openqa.selenium.NoSuchElementException">
+            <message>
+              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"/html[1]/body[1]/app-root[1]/div[1]/div[1]/app-user-management[1]/div[1]/div[2]/form[1]/div[1]/div[1]/kendo-splitter[1]/kendo-splitter-pane[2]/div[1]/div[1]/div[1]/kendo-grid[1]/div[1]/kendo-grid-list[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[2]/label[1]/span[1]"}
+  (Session info: chrome=94.0.4606.81)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'OPTISSD9', ip: '10.0.23.229', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '16.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 94.0.4606.81, chrome: {chromedriverVersion: 94.0.4606.61 (418b78f5838ed..., userDataDir: C:\Users\User1\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:53493}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: b04272f0eb73e5669a9445a6eea6eaee
+*** Element info: {Using=xpath, value=/html[1]/body[1]/app-root[1]/div[1]/div[1]/app-user-management[1]/div[1]/div[2]/form[1]/div[1]/div[1]/kendo-splitter[1]/kendo-splitter-pane[2]/div[1]/div[1]/div[1]/kendo-grid[1]/div[1]/kendo-grid-list[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[2]/label[1]/span[1]}]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"/html[1]/body[1]/app-root[1]/div[1]/div[1]/app-user-management[1]/div[1]/div[2]/form[1]/div[1]/div[1]/kendo-splitter[1]/kendo-splitter-pane[2]/div[1]/div[1]/div[1]/kendo-grid[1]/div[1]/kendo-grid-list[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[2]/label[1]/span[1]"}
+  (Session info: chrome=94.0.4606.81)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'OPTISSD9', ip: '10.0.23.229', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '16.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 94.0.4606.81, chrome: {chromedriverVersion: 94.0.4606.61 (418b78f5838ed..., userDataDir: C:\Users\User1\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:53493}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: b04272f0eb73e5669a9445a6eea6eaee
+*** Element info: {Using=xpath, value=/html[1]/body[1]/app-root[1]/div[1]/div[1]/app-user-management[1]/div[1]/div[2]/form[1]/div[1]/div[1]/kendo-splitter[1]/kendo-splitter-pane[2]/div[1]/div[1]/div[1]/kendo-grid[1]/div[1]/kendo-grid-list[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[2]/label[1]/span[1]}
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:78)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+at jdk.proxy2/jdk.proxy2.$Proxy15.click(Unknown Source)
+at Website_pages.User_Management_page.Verify_addUserManagement(User_Management_page.java:187)
+at testcases.UserManagePage_Testcases.Verify_AddUserManagement(UserManagePage_Testcases.java:58)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:567)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- Verify_menus -->
-        <test-method is-config="true" signature="teardown()[pri:0, instance:testcases.User_Group_Testcases@53aac487]" started-at="2021-10-14T12:11:49 IST" name="teardown" finished-at="2021-10-14T12:11:50 IST" duration-ms="159" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- teardown -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:testcases.User_Group_Testcases@53aac487]" started-at="2021-10-14T12:11:50 IST" name="setup" finished-at="2021-10-14T12:11:53 IST" duration-ms="3743" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="Verify_search()[pri:2, instance:testcases.User_Group_Testcases@53aac487]" started-at="2021-10-14T12:11:53 IST" name="Verify_search" finished-at="2021-10-14T12:12:04 IST" duration-ms="10629" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Verify_search -->
-        <test-method is-config="true" signature="teardown()[pri:0, instance:testcases.User_Group_Testcases@53aac487]" started-at="2021-10-14T12:12:04 IST" name="teardown" finished-at="2021-10-14T12:12:04 IST" duration-ms="139" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- teardown -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:testcases.User_Group_Testcases@53aac487]" started-at="2021-10-14T12:12:04 IST" name="setup" finished-at="2021-10-14T12:12:09 IST" duration-ms="4344" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="Verify_Enable_filter()[pri:3, instance:testcases.User_Group_Testcases@53aac487]" started-at="2021-10-14T12:12:09 IST" name="Verify_Enable_filter" finished-at="2021-10-14T12:12:19 IST" duration-ms="10552" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Verify_Enable_filter -->
-        <test-method is-config="true" signature="teardown()[pri:0, instance:testcases.User_Group_Testcases@53aac487]" started-at="2021-10-14T12:12:19 IST" name="teardown" finished-at="2021-10-14T12:12:19 IST" duration-ms="204" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- teardown -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:testcases.User_Group_Testcases@53aac487]" started-at="2021-10-14T12:12:19 IST" name="setup" finished-at="2021-10-14T12:12:23 IST" duration-ms="3724" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="Verify_Enable_grouping()[pri:4, instance:testcases.User_Group_Testcases@53aac487]" started-at="2021-10-14T12:12:23 IST" name="Verify_Enable_grouping" finished-at="2021-10-14T12:12:33 IST" duration-ms="10484" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Verify_Enable_grouping -->
-        <test-method is-config="true" signature="teardown()[pri:0, instance:testcases.User_Group_Testcases@53aac487]" started-at="2021-10-14T12:12:33 IST" name="teardown" finished-at="2021-10-14T12:12:34 IST" duration-ms="141" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- teardown -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:testcases.User_Group_Testcases@53aac487]" started-at="2021-10-14T12:12:34 IST" name="setup" finished-at="2021-10-14T12:12:37 IST" duration-ms="3708" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="Verify_AddUserGroup()[pri:5, instance:testcases.User_Group_Testcases@53aac487]" started-at="2021-10-14T12:12:37 IST" name="Verify_AddUserGroup" finished-at="2021-10-14T12:12:54 IST" duration-ms="16963" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Verify_AddUserGroup -->
-        <test-method is-config="true" signature="teardown()[pri:0, instance:testcases.User_Group_Testcases@53aac487]" started-at="2021-10-14T12:12:54 IST" name="teardown" finished-at="2021-10-14T12:12:54 IST" duration-ms="142" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- teardown -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:testcases.User_Group_Testcases@53aac487]" started-at="2021-10-14T12:12:54 IST" name="setup" finished-at="2021-10-14T12:12:59 IST" duration-ms="4246" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="verify_Export_Excel()[pri:5, instance:testcases.User_Group_Testcases@53aac487]" started-at="2021-10-14T12:12:59 IST" name="verify_Export_Excel" finished-at="2021-10-14T12:13:15 IST" duration-ms="16786" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verify_Export_Excel -->
-        <test-method is-config="true" signature="teardown()[pri:0, instance:testcases.User_Group_Testcases@53aac487]" started-at="2021-10-14T12:13:15 IST" name="teardown" finished-at="2021-10-14T12:13:16 IST" duration-ms="126" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- teardown -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:testcases.User_Group_Testcases@53aac487]" started-at="2021-10-14T12:13:16 IST" name="setup" finished-at="2021-10-14T12:13:20 IST" duration-ms="4311" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="Verify_UpdateUserGroup()[pri:6, instance:testcases.User_Group_Testcases@53aac487]" started-at="2021-10-14T12:13:20 IST" name="Verify_UpdateUserGroup" finished-at="2021-10-14T12:13:32 IST" depends-on-methods="testcases.User_Group_Testcases.Verify_AddUserGroup" duration-ms="11720" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Verify_UpdateUserGroup -->
-        <test-method is-config="true" signature="teardown()[pri:0, instance:testcases.User_Group_Testcases@53aac487]" started-at="2021-10-14T12:13:32 IST" name="teardown" finished-at="2021-10-14T12:13:32 IST" duration-ms="143" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- teardown -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:testcases.User_Group_Testcases@53aac487]" started-at="2021-10-14T12:13:32 IST" name="setup" finished-at="2021-10-14T12:13:35 IST" duration-ms="3659" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="Verify_DeleteUserGroup()[pri:7, instance:testcases.User_Group_Testcases@53aac487]" started-at="2021-10-14T12:13:35 IST" name="Verify_DeleteUserGroup" finished-at="2021-10-14T12:13:41 IST" depends-on-methods="testcases.User_Group_Testcases.Verify_AddUserGroup, testcases.User_Group_Testcases.Verify_UpdateUserGroup" duration-ms="5265" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Verify_DeleteUserGroup -->
-        <test-method is-config="true" signature="teardown()[pri:0, instance:testcases.User_Group_Testcases@53aac487]" started-at="2021-10-14T12:13:41 IST" name="teardown" finished-at="2021-10-14T12:13:41 IST" duration-ms="129" status="PASS">
+        </test-method> <!-- Verify_AddUserManagement -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:testcases.UserManagePage_Testcases@506ae4d4]" started-at="2021-10-19T19:41:26 IST" name="teardown" finished-at="2021-10-19T19:41:27 IST" duration-ms="232" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
-        <test-method is-config="true" signature="flushextent()[pri:0, instance:testcases.User_Group_Testcases@53aac487]" started-at="2021-10-14T12:13:41 IST" name="flushextent" finished-at="2021-10-14T12:13:41 IST" duration-ms="366" status="PASS">
+        <test-method is-config="true" signature="flushextent()[pri:0, instance:testcases.UserManagePage_Testcases@506ae4d4]" started-at="2021-10-19T19:41:27 IST" name="flushextent" finished-at="2021-10-19T19:41:27 IST" duration-ms="407" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- flushextent -->
-      </class> <!-- testcases.User_Group_Testcases -->
+      </class> <!-- testcases.UserManagePage_Testcases -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

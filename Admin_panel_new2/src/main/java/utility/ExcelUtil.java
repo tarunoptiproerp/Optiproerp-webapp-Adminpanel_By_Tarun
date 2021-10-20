@@ -70,7 +70,7 @@ public class ExcelUtil {
      //   }
         try {
             // Open the Excel file
-            FileInputStream ExcelFile = new FileInputStream(testDataExcelPath + "\\TestData.xlsx");
+            FileInputStream ExcelFile = new FileInputStream(testDataExcelPath + "\\Test_Data_For_Admin.xlsx");
             excelWBook = new XSSFWorkbook(ExcelFile);
             excelWSheet = excelWBook.getSheet(sheetName);
         } catch (Exception e) {
@@ -118,7 +118,9 @@ public class ExcelUtil {
                 cell.setCellValue(value);
             }
             // Constant variables Test Data path and Test Data file name
-            FileOutputStream fileOut = new FileOutputStream(testDataExcelPath + "\\TestData\\TestData.xlsx");
+            FileOutputStream fileOut = new FileOutputStream(testDataExcelPath + "\\Test_Data_For_Admin.xlsx");
+            //Test_Data_For_Admin.xlsx
+            //\\TestData\\TestData.xlsx
             excelWBook.write(fileOut);
             fileOut.flush();
             fileOut.close();

@@ -22,13 +22,13 @@ import Website_pages.User_Group_page;
 import basepackage.Base_Class;
 import utility.ExcelUtil;
 
-public class User_Group_Testcases extends Base_Class {
+public class UserGroup_Testcases extends Base_Class {
 
 	public Login_page logpage;
 	public User_Group_page usrgrup;
 	public ExtentTest test;
 
-	public User_Group_Testcases() throws IOException {
+	public UserGroup_Testcases() throws IOException {
 		super();
 
 	}
@@ -98,7 +98,7 @@ public class User_Group_Testcases extends Base_Class {
 
 	@Test(priority = 6)
 	public void Verify_AddUserGroup() throws Exception {
-		test = extent.createTest("TC5_Verify Export_Excel");
+		test = extent.createTest("TC5_Verify Add UserGroup");
 		logpage.login(username, password);
 		sleep();
 

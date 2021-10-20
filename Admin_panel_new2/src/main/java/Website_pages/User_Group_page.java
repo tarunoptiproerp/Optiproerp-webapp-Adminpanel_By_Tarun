@@ -172,26 +172,24 @@ public class User_Group_page extends Base_Class {
 	{
 		User_group.click();
 		sleep();
-		robot = new Robot();
-		robot.keyPress(KeyEvent.VK_CONTROL);
-        robot.keyPress(KeyEvent.VK_J);
-        
-        robot.keyPress(KeyEvent.VK_ALT);
-        robot.keyPress(KeyEvent.VK_C);
-        
-        robot.keyPress(KeyEvent.VK_CONTROL);
-     //   robot.keyPress(KeyEvent.VK_SHIFT);
-        robot.keyPress(KeyEvent.VK_TAB);
-        export_button.click();
-        
-        robot.keyPress(KeyEvent.VK_CONTROL);
-        robot.keyPress(KeyEvent.VK_J);
+		/*
+		 * robot = new Robot(); robot.keyPress(KeyEvent.VK_CONTROL);
+		 * robot.keyPress(KeyEvent.VK_J);
+		 * 
+		 * robot.keyPress(KeyEvent.VK_ALT); robot.keyPress(KeyEvent.VK_C);
+		 * 
+		 * robot.keyPress(KeyEvent.VK_CONTROL); // robot.keyPress(KeyEvent.VK_SHIFT);
+		 * robot.keyPress(KeyEvent.VK_TAB); export_button.click();
+		 * 
+		 * robot.keyPress(KeyEvent.VK_CONTROL); robot.keyPress(KeyEvent.VK_J);
+		 */
 	}
 	
 	public void Verify_addUserGroup(XSSFRow row) {
 		
 		User_group.click();
 		btnAdd.click();
+		
 		group_admin_name.sendKeys(row.getCell(0).toString());
 		group_admin_Description.sendKeys(row.getCell(1).toString());
 		// drpRole.click();
@@ -199,6 +197,7 @@ public class User_Group_page extends Base_Class {
 		mapped_SAP_B1_user.sendKeys(row.getCell(2).toString());
 		// drpRole.click();
 		mapped_SAP_B1_password.sendKeys(row.getCell(3).toString());
+		Tenant.sendKeys("");
 		btnSave.click();
 
 	}

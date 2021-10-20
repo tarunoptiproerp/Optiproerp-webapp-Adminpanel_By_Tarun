@@ -78,7 +78,7 @@ public class Base_Class {
 	}
 	public void pageload()
 	{
-		driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
+		driver.manage().timeouts().pageLoadTimeout(300000, TimeUnit.MILLISECONDS);
 	//	driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
 	}
 	
