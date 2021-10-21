@@ -50,8 +50,53 @@ public class RolePage_Testcases extends Base_Class{
 		rpage = PageFactory.initElements(driver, Roles_page.class);
 	}
 	
-	
 	@Test(priority=1)
+	public void Verify_title() throws IOException, InterruptedException {
+		test = extent.createTest("TC1_Verify Title");
+		logpage.login(username, password);
+		sleep();
+		String Title = rpage.verify_page_title();
+		Assert.assertEquals(Title, "Roles", "title is correct");
+		test.log(Status.PASS, "Title are correct");
+	}
+	
+	@Test(priority = 2)
+	public void Verify_search() throws IOException, InterruptedException {
+		test = extent.createTest("TC2_Verify Search");
+		logpage.login(username, password);
+		sleep();
+		rpage.verify_search("xyx");
+		sleep();
+	}
+	
+	@Test(priority = 3)
+	public void Verify_Enable_filter() throws IOException, InterruptedException {
+		test = extent.createTest("TC3_Verify Enable_filter");
+		logpage.login(username, password);
+		sleep();
+		rpage.verify_enable_filter();
+		sleep();
+	}
+
+	@Test(priority = 4)
+	public void Verify_Enable_grouping() throws IOException, InterruptedException {
+		test = extent.createTest("TC4_Verify Enable_grouping");
+		logpage.login(username, password);
+		sleep();
+		rpage.verify_enable_grouping();
+		sleep();
+	}
+	
+	@Test(priority = 5)
+	public void verify_Export_Excel() throws AWTException, IOException, InterruptedException {
+		test = extent.createTest("TC5_Verify Export_Excel");
+		logpage.login(username, password);
+		sleep();
+		rpage.verify_export_Excel();
+		sleep();
+	}
+	
+	@Test(priority=6)
 	public void Verify_AddRole() throws Exception
 	{
 		test = extent.createTest("TC6_Verify Add User Management");
@@ -66,7 +111,7 @@ public class RolePage_Testcases extends Base_Class{
 	
 	}
 	
-	@Test(priority=2)
+	@Test(priority=7)
 	public void Verify_Update_Roles() throws InterruptedException, Exception
 	{
 		logpage.login(username, password);
@@ -78,7 +123,7 @@ public class RolePage_Testcases extends Base_Class{
 		}
 	}
 	
-	@Test(priority=3)
+	@Test(priority=8)
 	public void Verify_Delete_Roles() throws InterruptedException, Exception
 	{
 		logpage.login(username, password);
@@ -88,52 +133,6 @@ public class RolePage_Testcases extends Base_Class{
 			rpage.Verify_DeleteRoles(ExcelUtil.getRowData(i));
 			sleep();
 		}
-	}
-	
-	@Test(priority=4)
-	public void Verify_title() throws IOException, InterruptedException {
-		test = extent.createTest("TC1_Verify Title");
-		logpage.login(username, password);
-		sleep();
-		String Title = rpage.verify_page_title();
-		Assert.assertEquals(Title, "Roles", "title is correct");
-		test.log(Status.PASS, "Title are correct");
-	}
-	
-	@Test(priority = 5)
-	public void Verify_search() throws IOException, InterruptedException {
-		test = extent.createTest("TC2_Verify Search");
-		logpage.login(username, password);
-		sleep();
-		rpage.verify_search("xyx");
-		sleep();
-	}
-	
-	@Test(priority = 6)
-	public void Verify_Enable_filter() throws IOException, InterruptedException {
-		test = extent.createTest("TC3_Verify Enable_filter");
-		logpage.login(username, password);
-		sleep();
-		rpage.verify_enable_filter();
-		sleep();
-	}
-
-	@Test(priority = 7)
-	public void Verify_Enable_grouping() throws IOException, InterruptedException {
-		test = extent.createTest("TC4_Verify Enable_grouping");
-		logpage.login(username, password);
-		sleep();
-		rpage.verify_enable_grouping();
-		sleep();
-	}
-	
-	@Test(priority = 8)
-	public void verify_Export_Excel() throws AWTException, IOException, InterruptedException {
-		test = extent.createTest("TC5_Verify Export_Excel");
-		logpage.login(username, password);
-		sleep();
-		rpage.verify_export_Excel();
-		sleep();
 	}
 	
 	

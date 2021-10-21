@@ -104,7 +104,7 @@
 						<suiteXmlFile>src/test/resources/testng.xml</suiteXmlFile>
 					</suiteXmlFiles>
 					<systemPropertyVariables>
-						<application.properties>/application.properties</application.properties>
+						<application.properties>src\main\java\configuration\configuration.properties</application.properties>
 					</systemPropertyVariables>
 				</configuration>
 			</plugin>

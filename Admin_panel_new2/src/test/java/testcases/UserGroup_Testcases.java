@@ -56,8 +56,8 @@ public class UserGroup_Testcases extends Base_Class {
 		logpage.login(username, password);
 		sleep();
 		String Title = usrgrup.verify_page_title();
-		Assert.assertEquals(Title, "User Group", "title is correct");
-		test.log(Status.PASS, "Menus are working fine");
+		Assert.assertEquals(Title, "User Group", "Title is correct");
+		test.log(Status.PASS, "Title is correct");
 	}
 
 	@Test(priority = 2)
