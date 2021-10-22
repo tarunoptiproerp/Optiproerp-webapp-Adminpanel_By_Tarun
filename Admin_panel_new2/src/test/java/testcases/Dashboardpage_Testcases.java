@@ -71,7 +71,7 @@ public class Dashboardpage_Testcases extends Base_Class {
 	
 	@Test (priority=1)
 	public void Verify_menus() throws IOException, InterruptedException
-	{
+	{	
 		test = extent.createTest("TC1_Verify Menus");
 		logpage.login(username, password);
 		sleep();
