@@ -50,13 +50,13 @@ public class UserManagePage_Testcases extends Base_Class {
 	}
 	
 	@Test(priority = 1)
-	public void Verify_menus() throws IOException, InterruptedException {
+	public void Verify_title() throws IOException, InterruptedException {
 		test = extent.createTest("TC1_Verify Title");
 		logpage.login(username, password);
 		sleep();
 		String Title = usrmang.verify_page_title();
-		Assert.assertEquals(Title, "User Group", "title is correct");
-		test.log(Status.PASS, "Menus are working fine");
+		Assert.assertEquals(Title, "User Management", "Title is correct");
+		test.log(Status.PASS, "Title is correct");
 	}
 	
 	@Test(priority = 2)
@@ -65,6 +65,7 @@ public class UserManagePage_Testcases extends Base_Class {
 		logpage.login(username, password);
 		sleep();
 		usrmang.verify_search("xyx");
+		test.log(Status.PASS, "search is displaying result");
 		sleep();
 	}
 
@@ -75,6 +76,7 @@ public class UserManagePage_Testcases extends Base_Class {
 		sleep();
 		usrmang.verify_enable_filter();
 		sleep();
+		test.log(Status.PASS, "Filter is now enabled");
 	}
 
 	@Test(priority = 4)
@@ -84,6 +86,7 @@ public class UserManagePage_Testcases extends Base_Class {
 		sleep();
 		usrmang.verify_enable_grouping();
 		sleep();
+		test.log(Status.PASS, "grouping is now enabled");
 	}
 
 	@Test(priority = 5)
@@ -92,52 +95,58 @@ public class UserManagePage_Testcases extends Base_Class {
 		logpage.login(username, password);
 		sleep();
 		usrmang.verify_export_Excel();
-		sleep();
+		test.log(Status.PASS, "Excel is now exported");
 	}
 
-	
-	
 	@Test(priority=6)
 	public void Verify_AddUserManagement() throws Exception
 	{
-		test = extent.createTest("TC6_Verify Add User Management");
+		test = extent.createTest("TC6_Verify Add UserManagement");
 		logpage.login(username, password);
 		sleep();
 		XSSFSheet sheet = ExcelUtil.setExcelFileSheet("UserManagAdd");
 		
 		for (int i = 1; i < sheet.getLastRowNum() + 1; i++) {
 			usrmang.Verify_addUserManagement(ExcelUtil.getRowData(i));
+			
 			sleep();
 		}
+		test.log(Status.PASS, "User is added successfully");
 		
 	}
 	
 	//(dependsOnMethods="Verify_AddUserGroup", priority= 7)
-	@Test(priority= 7)
-	public void Verify_UpdateUserGroup() throws Exception {
+	@Test(dependsOnMethods="Verify_AddUserManagement", priority= 7)
+	public void Verify_UpdateUserManagement() throws Exception {
 
-		test = extent.createTest("TC6_Verify UpdateUserGroup");
+		test = extent.createTest("TC7_Verify Update UserManagement");
 		logpage.login(username, password);
 		sleep();
 		XSSFSheet sheet = ExcelUtil.setExcelFileSheet("UserManagUpdate");
 
-		for (int i = 1; i < sheet.getLastRowNum(); i++) {
-			usrmang.Verify_updateUserGroup(ExcelUtil.getRowData(i));
+		for (int i = 1; i < sheet.getLastRowNum()+1; i++) {
+			usrmang.Verify_updateUsermanagement(ExcelUtil.getRowData(i));
 			sleep();
 		}
+		test.log(Status.PASS, "User is Updated successfully");
 
 	}
 	
 	//(dependsOnMethods={"Verify_AddUserGroup","Verify_UpdateUserGroup"},priority = 8)
-	@Test(priority = 8)
+	@Test(dependsOnMethods={"Verify_AddUserManagement","Verify_UpdateUserManagement"},priority = 8)
 	public void Verify_DeleteUserManagement() throws InterruptedException, Exception {
-		test = extent.createTest("TC5_Verify DeleteUserGroup");
+		test = extent.createTest("TC8_Verify DeleteUserManagement");
 		logpage.login(username, password);
 		sleep();
-		usrmang.Verify_searchAndDeleteUsermanage();
+		XSSFSheet sheet = ExcelUtil.setExcelFileSheet("UserManagDelete");
+
+		for (int i = 1; i < sheet.getLastRowNum()+1; i++) {
+			usrmang.Verify_searchAndDeleteUsermanage(ExcelUtil.getRowData(i));
+			sleep();
+		}
+		test.log(Status.PASS, "User is Deleted successfully");
+		
 	}
-	
-	
 	
 	@AfterMethod
 	public void teardown() {

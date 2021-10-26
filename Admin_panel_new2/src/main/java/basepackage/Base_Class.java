@@ -8,7 +8,15 @@ import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
@@ -19,6 +27,8 @@ public class Base_Class {
 	public static WebDriver driver;
 	public static ExtentReports extent;
 	public static ExtentSparkReporter spark;
+	Robot robot;
+	
 	
 	
 	public Base_Class() throws IOException
@@ -86,6 +96,26 @@ public class Base_Class {
 	{
 		Thread.sleep(5000);
 	}
+	
+	public void wait_upto_elementVisible(WebElement element)
+	{
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.visibilityOf(element));
+	}
+	
+	public void select_element_from_dropdown(WebElement dropdown,String value)
+	{
+		Select drpCountry = new Select(dropdown);
+		drpCountry.selectByVisibleText(value);
+	}
+	
+	public void robot(int Keybord_key) throws AWTException
+	{
+		robot = new Robot();
+		robot.keyPress(Keybord_key);
+		robot.keyRelease(Keybord_key);
+	}
+	
 	
 	public static void ExtentReports()
 	{

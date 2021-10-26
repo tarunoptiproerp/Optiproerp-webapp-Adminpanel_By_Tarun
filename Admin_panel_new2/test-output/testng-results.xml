@@ -1,33 +1,117 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="3" total="4" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="8" passed="8" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-10-20T18:30:31 IST" name="Default suite" finished-at="2021-10-20T18:30:43 IST" duration-ms="11810">
+  <suite started-at="2021-10-26T17:36:08 IST" name="Default suite" finished-at="2021-10-26T17:40:56 IST" duration-ms="288280">
     <groups>
     </groups>
-    <test started-at="2021-10-20T18:30:31 IST" name="Default test" finished-at="2021-10-20T18:30:43 IST" duration-ms="11810">
-      <class name="testcases.RolePage_Testcases">
-        <test-method is-config="true" signature="initExtentreport()[pri:0, instance:testcases.RolePage_Testcases@52b1beb6]" started-at="2021-10-20T18:30:31 IST" name="initExtentreport" finished-at="2021-10-20T18:30:31 IST" duration-ms="351" status="PASS">
+    <test started-at="2021-10-26T17:36:08 IST" name="Default test" finished-at="2021-10-26T17:40:56 IST" duration-ms="288280">
+      <class name="testcases.UserManagePage_Testcases">
+        <test-method is-config="true" signature="initExtentreport()[pri:0, instance:testcases.UserManagePage_Testcases@3527942a]" started-at="2021-10-26T17:36:08 IST" name="initExtentreport" finished-at="2021-10-26T17:36:08 IST" duration-ms="344" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initExtentreport -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:testcases.RolePage_Testcases@52b1beb6]" started-at="2021-10-20T18:30:31 IST" name="setup" finished-at="2021-10-20T18:30:36 IST" duration-ms="5250" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:testcases.UserManagePage_Testcases@3527942a]" started-at="2021-10-26T17:36:08 IST" name="setup" finished-at="2021-10-26T17:36:13 IST" duration-ms="5151" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="Verify_title()[pri:4, instance:testcases.RolePage_Testcases@52b1beb6]" started-at="2021-10-20T18:30:36 IST" name="Verify_title" finished-at="2021-10-20T18:30:42 IST" duration-ms="5525" status="PASS">
+        <test-method signature="Verify_title()[pri:1, instance:testcases.UserManagePage_Testcases@3527942a]" started-at="2021-10-26T17:36:13 IST" name="Verify_title" finished-at="2021-10-26T17:36:19 IST" duration-ms="5496" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Verify_title -->
-        <test-method is-config="true" signature="teardown()[pri:0, instance:testcases.RolePage_Testcases@52b1beb6]" started-at="2021-10-20T18:30:42 IST" name="teardown" finished-at="2021-10-20T18:30:42 IST" duration-ms="273" status="PASS">
+        <test-method is-config="true" signature="teardown()[pri:0, instance:testcases.UserManagePage_Testcases@3527942a]" started-at="2021-10-26T17:36:19 IST" name="teardown" finished-at="2021-10-26T17:36:19 IST" duration-ms="151" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
-        <test-method is-config="true" signature="flushextent()[pri:0, instance:testcases.RolePage_Testcases@52b1beb6]" started-at="2021-10-20T18:30:42 IST" name="flushextent" finished-at="2021-10-20T18:30:43 IST" duration-ms="367" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:testcases.UserManagePage_Testcases@3527942a]" started-at="2021-10-26T17:36:19 IST" name="setup" finished-at="2021-10-26T17:36:23 IST" duration-ms="4055" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="Verify_search()[pri:2, instance:testcases.UserManagePage_Testcases@3527942a]" started-at="2021-10-26T17:36:23 IST" name="Verify_search" finished-at="2021-10-26T17:36:34 IST" duration-ms="10632" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Verify_search -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:testcases.UserManagePage_Testcases@3527942a]" started-at="2021-10-26T17:36:34 IST" name="teardown" finished-at="2021-10-26T17:36:34 IST" duration-ms="140" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:testcases.UserManagePage_Testcases@3527942a]" started-at="2021-10-26T17:36:34 IST" name="setup" finished-at="2021-10-26T17:36:38 IST" duration-ms="4087" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="Verify_Enable_filter()[pri:3, instance:testcases.UserManagePage_Testcases@3527942a]" started-at="2021-10-26T17:36:38 IST" name="Verify_Enable_filter" finished-at="2021-10-26T17:36:49 IST" duration-ms="10584" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Verify_Enable_filter -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:testcases.UserManagePage_Testcases@3527942a]" started-at="2021-10-26T17:36:49 IST" name="teardown" finished-at="2021-10-26T17:36:49 IST" duration-ms="125" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:testcases.UserManagePage_Testcases@3527942a]" started-at="2021-10-26T17:36:49 IST" name="setup" finished-at="2021-10-26T17:36:53 IST" duration-ms="4070" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="Verify_Enable_grouping()[pri:4, instance:testcases.UserManagePage_Testcases@3527942a]" started-at="2021-10-26T17:36:53 IST" name="Verify_Enable_grouping" finished-at="2021-10-26T17:37:03 IST" duration-ms="10513" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Verify_Enable_grouping -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:testcases.UserManagePage_Testcases@3527942a]" started-at="2021-10-26T17:37:03 IST" name="teardown" finished-at="2021-10-26T17:37:03 IST" duration-ms="110" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:testcases.UserManagePage_Testcases@3527942a]" started-at="2021-10-26T17:37:03 IST" name="setup" finished-at="2021-10-26T17:37:07 IST" duration-ms="4085" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="verify_Export_Excel()[pri:5, instance:testcases.UserManagePage_Testcases@3527942a]" started-at="2021-10-26T17:37:07 IST" name="verify_Export_Excel" finished-at="2021-10-26T17:37:29 IST" duration-ms="21823" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verify_Export_Excel -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:testcases.UserManagePage_Testcases@3527942a]" started-at="2021-10-26T17:37:29 IST" name="teardown" finished-at="2021-10-26T17:37:29 IST" duration-ms="139" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:testcases.UserManagePage_Testcases@3527942a]" started-at="2021-10-26T17:37:29 IST" name="setup" finished-at="2021-10-26T17:37:33 IST" duration-ms="4089" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="Verify_AddUserManagement()[pri:6, instance:testcases.UserManagePage_Testcases@3527942a]" started-at="2021-10-26T17:37:33 IST" name="Verify_AddUserManagement" finished-at="2021-10-26T17:39:55 IST" duration-ms="141108" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Verify_AddUserManagement -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:testcases.UserManagePage_Testcases@3527942a]" started-at="2021-10-26T17:39:55 IST" name="teardown" finished-at="2021-10-26T17:39:55 IST" duration-ms="141" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:testcases.UserManagePage_Testcases@3527942a]" started-at="2021-10-26T17:39:55 IST" name="setup" finished-at="2021-10-26T17:39:59 IST" duration-ms="3787" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="Verify_UpdateUserManagement()[pri:7, instance:testcases.UserManagePage_Testcases@3527942a]" started-at="2021-10-26T17:39:59 IST" name="Verify_UpdateUserManagement" finished-at="2021-10-26T17:40:25 IST" depends-on-methods="testcases.UserManagePage_Testcases.Verify_AddUserManagement" duration-ms="26924" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Verify_UpdateUserManagement -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:testcases.UserManagePage_Testcases@3527942a]" started-at="2021-10-26T17:40:25 IST" name="teardown" finished-at="2021-10-26T17:40:26 IST" duration-ms="125" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:testcases.UserManagePage_Testcases@3527942a]" started-at="2021-10-26T17:40:26 IST" name="setup" finished-at="2021-10-26T17:40:29 IST" duration-ms="3024" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="Verify_DeleteUserManagement()[pri:8, instance:testcases.UserManagePage_Testcases@3527942a]" started-at="2021-10-26T17:40:29 IST" name="Verify_DeleteUserManagement" finished-at="2021-10-26T17:40:56 IST" depends-on-methods="testcases.UserManagePage_Testcases.Verify_AddUserManagement, testcases.UserManagePage_Testcases.Verify_UpdateUserManagement" duration-ms="27009" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Verify_DeleteUserManagement -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:testcases.UserManagePage_Testcases@3527942a]" started-at="2021-10-26T17:40:56 IST" name="teardown" finished-at="2021-10-26T17:40:56 IST" duration-ms="127" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+        <test-method is-config="true" signature="flushextent()[pri:0, instance:testcases.UserManagePage_Testcases@3527942a]" started-at="2021-10-26T17:40:56 IST" name="flushextent" finished-at="2021-10-26T17:40:56 IST" duration-ms="379" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- flushextent -->
-      </class> <!-- testcases.RolePage_Testcases -->
+      </class> <!-- testcases.UserManagePage_Testcases -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

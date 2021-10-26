@@ -98,7 +98,7 @@ public class UserGroup_Testcases extends Base_Class {
 
 	@Test(priority = 6)
 	public void Verify_AddUserGroup() throws Exception {
-		test = extent.createTest("TC5_Verify Add UserGroup");
+		test = extent.createTest("TC6_Verify Add UserGroup");
 		logpage.login(username, password);
 		sleep();
 
@@ -115,7 +115,7 @@ public class UserGroup_Testcases extends Base_Class {
 	@Test(dependsOnMethods="Verify_AddUserGroup", priority= 7)
 	public void Verify_UpdateUserGroup() throws Exception {
 
-		test = extent.createTest("TC6_Verify UpdateUserGroup");
+		test = extent.createTest("TC7_Verify UpdateUserGroup");
 		logpage.login(username, password);
 		sleep();
 		XSSFSheet sheet = ExcelUtil.setExcelFileSheet("UserGroupUpdate");
@@ -129,7 +129,7 @@ public class UserGroup_Testcases extends Base_Class {
 
 	@Test(dependsOnMethods={"Verify_AddUserGroup","Verify_UpdateUserGroup"},priority = 8)
 	public void Verify_DeleteUserGroup() throws InterruptedException, Exception {
-		test = extent.createTest("TC5_Verify DeleteUserGroup");
+		test = extent.createTest("TC8_Verify DeleteUserGroup");
 		logpage.login(username, password);
 		sleep();
 

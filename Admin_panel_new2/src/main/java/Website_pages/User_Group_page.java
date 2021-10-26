@@ -172,17 +172,29 @@ public class User_Group_page extends Base_Class {
 	{
 		User_group.click();
 		sleep();
-		/*
-		 * robot = new Robot(); robot.keyPress(KeyEvent.VK_CONTROL);
-		 * robot.keyPress(KeyEvent.VK_J);
-		 * 
-		 * robot.keyPress(KeyEvent.VK_ALT); robot.keyPress(KeyEvent.VK_C);
-		 * 
-		 * robot.keyPress(KeyEvent.VK_CONTROL); // robot.keyPress(KeyEvent.VK_SHIFT);
-		 * robot.keyPress(KeyEvent.VK_TAB); export_button.click();
-		 * 
-		 * robot.keyPress(KeyEvent.VK_CONTROL); robot.keyPress(KeyEvent.VK_J);
-		 */
+		
+		 robot = new Robot(); 
+		 robot.keyPress(KeyEvent.VK_CONTROL);
+		 robot.keyPress(KeyEvent.VK_J);
+		 robot.keyRelease(KeyEvent.VK_CONTROL);
+		 robot.keyRelease(KeyEvent.VK_J);
+		 
+		 robot.keyPress(KeyEvent.VK_ALT); 
+		 robot.keyPress(KeyEvent.VK_C);
+		 robot.keyRelease(KeyEvent.VK_ALT); 
+		 robot.keyRelease(KeyEvent.VK_C);
+		 sleep();
+		 robot.keyPress(KeyEvent.VK_CONTROL); // robot.keyPress(KeyEvent.VK_SHIFT);
+		 robot.keyPress(KeyEvent.VK_TAB); 
+		 robot.keyRelease(KeyEvent.VK_CONTROL); // robot.keyPress(KeyEvent.VK_SHIFT);
+		 robot.keyRelease(KeyEvent.VK_TAB); 
+		 sleep();
+		 export_button.click();
+		 sleep();
+		 robot.keyPress(KeyEvent.VK_CONTROL); 
+		 robot.keyPress(KeyEvent.VK_J);
+		 robot.keyRelease(KeyEvent.VK_CONTROL);
+		 robot.keyRelease(KeyEvent.VK_J);
 	}
 	
 	public void Verify_addUserGroup(XSSFRow row) {
