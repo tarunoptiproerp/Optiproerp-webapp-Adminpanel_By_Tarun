@@ -97,6 +97,11 @@ public class Base_Class {
 		Thread.sleep(5000);
 	}
 	
+	public void refresh() throws InterruptedException
+	{
+		driver.navigate().refresh();
+	}
+	
 	public void wait_upto_elementVisible(WebElement element)
 	{
 		WebDriverWait wait = new WebDriverWait(driver, 10);

@@ -20,6 +20,7 @@ import Website_pages.User_Management_page;
 import basepackage.Base_Class;
 import utility.ExcelUtil;
 
+
 public class UserManagePage_Testcases extends Base_Class {
 	
 	public Login_page logpage;
@@ -100,6 +101,7 @@ public class UserManagePage_Testcases extends Base_Class {
 	@Test(priority=6)
 	public void Verify_AddUserManagement() throws Exception
 	{
+		
 		test = extent.createTest("TC6_Verify Add UserManagement");
 		logpage.login(username, password);
 		sleep();
@@ -107,7 +109,7 @@ public class UserManagePage_Testcases extends Base_Class {
 		
 		for (int i = 1; i < sheet.getLastRowNum() + 1; i++) {
 			usrmang.Verify_addUserManagement(ExcelUtil.getRowData(i));
-			
+			refresh();
 			sleep();
 		}
 		test.log(Status.PASS, "User is added successfully");
@@ -115,7 +117,7 @@ public class UserManagePage_Testcases extends Base_Class {
 	}
 	
 	//(dependsOnMethods="Verify_AddUserGroup", priority= 7)
-	@Test(dependsOnMethods="Verify_AddUserManagement", priority= 7)
+	@Test(priority= 7)
 	public void Verify_UpdateUserManagement() throws Exception {
 
 		test = extent.createTest("TC7_Verify Update UserManagement");
@@ -126,6 +128,7 @@ public class UserManagePage_Testcases extends Base_Class {
 		for (int i = 1; i < sheet.getLastRowNum()+1; i++) {
 			usrmang.Verify_updateUsermanagement(ExcelUtil.getRowData(i));
 			sleep();
+			refresh();
 		}
 		test.log(Status.PASS, "User is Updated successfully");
 
@@ -146,7 +149,6 @@ public class UserManagePage_Testcases extends Base_Class {
 		test.log(Status.PASS, "User is Deleted successfully");
 		
 	}
-	
 	@AfterMethod
 	public void teardown() {
 		driver.quit();

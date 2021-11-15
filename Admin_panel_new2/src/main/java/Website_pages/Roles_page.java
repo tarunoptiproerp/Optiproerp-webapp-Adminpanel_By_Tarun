@@ -18,7 +18,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.testng.Assert;
+
 
 import basepackage.Base_Class;
 
@@ -56,8 +56,11 @@ public class Roles_page extends Base_Class {
 	@FindBy(xpath = "k-widget.k-window.k-dialog ng-trigger.ng-trigger-dialogSlideInAppear")
 	WebElement productframe;
 
-	@FindBy(xpath = "//div[@class='ng-star-inserted']//label[@class='custom-checkbox mb-0 mr-2 filter-checkbox']/span[@class='checkbox']")
+	@FindBy(xpath = "/html/body/app-root/div/div/app-user-roles/kendo-dialog/div[2]/div/div/kendo-grid/kendo-grid-toolbar/div/label[1]/span[1]")
 	WebElement chkEnableFilter;
+	
+	@FindBy(xpath = "/html/body/app-root/div/div/app-user-roles/kendo-dialog/div[2]/kendo-dialog-actions/button")
+	WebElement chkEnablecancel_button;
 
 	@FindBy(xpath = "//*[@id='content-area']/div/app-user-roles/kendo-dialog/div[2]/div/div/kendo-grid/div/div/div/table/thead/tr[2]/td[1]/kendo-grid-string-filter-cell/kendo-grid-filter-wrapper-cell/input")
 	WebElement txtProductId;
@@ -115,13 +118,13 @@ public class Roles_page extends Base_Class {
 	@FindBy(xpath="/html/body/app-root/div/div/app-user-roles/div/div[1]/h4")
 	WebElement page_title;
 	
-	@FindBy(xpath="//*[@id=\"content-area\"]/div/app-user-group/div/div[2]/div/div/kendo-grid/div/kendo-grid-list/div/div[1]/table/tbody/tr/td")
-	WebElement No_Record_available;
+	@FindBy(xpath="/html/body/app-root/div/div/app-user-roles/div/div[2]/div/div/kendo-grid/div/kendo-grid-list")
+	WebElement Result_Grid;
 	
-	@FindBy(xpath="/html[1]/body[1]/app-root[1]/div[1]/div[1]/app-user-group[1]/div[1]/div[2]/div[1]/div[1]/kendo-grid[1]/kendo-grid-toolbar[1]/div[1]/label[1]/span[1]")
+	@FindBy(xpath="/html/body/app-root/div/div/app-user-roles/div/div[2]/div/div/kendo-grid/kendo-grid-toolbar/div/label[1]")
 	WebElement checkbox_enable_Filter;
 	
-	@FindBy(xpath="/html[1]/body[1]/app-root[1]/div[1]/div[1]/app-user-group[1]/div[1]/div[2]/div[1]/div[1]/kendo-grid[1]/kendo-grid-toolbar[1]/div[1]/label[2]/span[1]")
+	@FindBy(xpath="/html/body/app-root/div/div/app-user-roles/div/div[2]/div/div/kendo-grid/kendo-grid-toolbar/div/label[2]")
 	WebElement checkbox_enable_grouping;
 	
 	public String verify_page_title()
@@ -136,8 +139,8 @@ public class Roles_page extends Base_Class {
 		roles.click();
 		Search_input.clear();
 		Search_input.sendKeys(group_code);
-		Search_button.click();
-		String message = No_Record_available.getText();
+		//Search_button.click();
+		String message = Result_Grid.getText();
 		if(!message.matches("No records available."))
 		{
 			System.out.println("Record displaying in screen");
@@ -165,10 +168,10 @@ public class Roles_page extends Base_Class {
 		}
 	}
 	
-	public void verify_enable_grouping()
+	public void verify_enable_grouping() throws InterruptedException
 	{
 		roles.click();
-		
+		sleep();
 		/*
 		 * WebElement checkbox = driver.findElement(By.tagName("checkbox")); Dimension
 		 * size = checkbox.getSize(); System.out.println(size);
@@ -203,9 +206,13 @@ public class Roles_page extends Base_Class {
 		sleep();
 		btnSearch.click();
 		sleep();
+		/*
+		 * if(!(chkEnableFilter.) { chkEnableFilter.click(); }
+		 */
 		chkEnableFilter.click();
 		sleep();
 		txtProductId.click();
+		sleep();
 		txtProductId.sendKeys("CNF");
 		sleep();
 		selectProduct.click();
@@ -225,6 +232,7 @@ public class Roles_page extends Base_Class {
 		Search_input.clear();
 		sleep();
 		Search_input.click();
+		sleep();
 		Search_input.sendKeys(user);
 		sleep();
 		// Search_button.click();
@@ -254,6 +262,7 @@ public class Roles_page extends Base_Class {
 		 * txtProductId.click(); txtProductId.sendKeys("CVP"); Thread.sleep(1000);
 		 * ClickProductId.click(); btnSave.click();
 		 */
+		sleep();
 		Update_button.click();
 		
 		roles.click();
@@ -264,6 +273,7 @@ public class Roles_page extends Base_Class {
 
 		roles.click();
 		String Role = row.getCell(0).toString();
+		System.out.println(Role);
 		SearchRole(Role);
 		sleep();
 		valGrid.findElement(By.xpath(

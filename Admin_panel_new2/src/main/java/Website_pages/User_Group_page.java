@@ -1,6 +1,6 @@
 package Website_pages;
 
-import static org.testng.Assert.assertEquals;
+
 
 import java.awt.AWTException;
 import java.awt.Robot;
@@ -195,9 +195,18 @@ public class User_Group_page extends Base_Class {
 		 robot.keyPress(KeyEvent.VK_J);
 		 robot.keyRelease(KeyEvent.VK_CONTROL);
 		 robot.keyRelease(KeyEvent.VK_J);
+		 robot.keyPress(KeyEvent.VK_CONTROL); // robot.keyPress(KeyEvent.VK_SHIFT);
+		 robot.keyPress(KeyEvent.VK_TAB); 
+		 robot.keyRelease(KeyEvent.VK_CONTROL); // robot.keyPress(KeyEvent.VK_SHIFT);
+		 robot.keyRelease(KeyEvent.VK_TAB); 
+			/*
+			 * robot.keyRelease(KeyEvent.VK_CONTROL); // robot.keyPress(KeyEvent.VK_SHIFT);
+			 * robot.keyRelease(KeyEvent.VK_F5);
+			 */
+		 
 	}
 	
-	public void Verify_addUserGroup(XSSFRow row) {
+	public void Verify_addUserGroup(XSSFRow row) throws InterruptedException {
 		
 		User_group.click();
 		btnAdd.click();
@@ -209,40 +218,29 @@ public class User_Group_page extends Base_Class {
 		mapped_SAP_B1_user.sendKeys(row.getCell(2).toString());
 		// drpRole.click();
 		mapped_SAP_B1_password.sendKeys(row.getCell(3).toString());
-		Tenant.sendKeys("");
+		sleep();
+		// Tenant.sendKeys(row.getCell(4).toString());
+		
 		btnSave.click();
 
 	}
 
 	public void Verify_updateUserGroup(XSSFRow row) throws Exception {
 		User_group.click();
-	 	Verify_addUserGroup(row);
-		// ExcelUtil.setExcelFileSheet("UserGroupUpdate");
-		ExcelUtil.setExcelFileSheet("UserGroupUpdate");
-		ExcelUtil.setRowNumber(2);
-		// System.out.println(row.getRowNum());
-
-		User_group.click();
-
-		// btnAdd.click();
-
+		sleep();
 		Search_input.clear();
-		// UserGroupSearch.sendKeys(row.getCell(0).toString());
-		Search_input.sendKeys(ExcelUtil.getRowData(2).getCell(0).toString());
-
-		// txtUser.sendKeys("user12");
+		sleep();
+		Search_input.sendKeys(row.getCell(0).toString());
+		sleep();
 		Grid.click();
+		sleep();
 		group_admin_Description.clear();
-		// txtDescription.sendKeys(row.getCell(1).toString());
-		group_admin_Description.sendKeys(ExcelUtil.getRowData(2).getCell(1).toString());
-
+		group_admin_Description.sendKeys(row.getCell(1).toString());
+		sleep();
 		mapped_SAP_B1_user.click();
-		// drpRole.sendKeys(row.getCell(2).toString());
-		mapped_SAP_B1_user.sendKeys(ExcelUtil.getRowData(2).getCell(2).toString());
-
-		// txtPassword.sendKeys(row.getCell(3).toString());
-		mapped_SAP_B1_password.sendKeys(ExcelUtil.getRowData(2).getCell(3).toString());
-
+		mapped_SAP_B1_user.sendKeys(row.getCell(2).toString());
+		mapped_SAP_B1_password.sendKeys(row.getCell(3).toString());
+		sleep();
 		btnSave.click();
 
 	}
@@ -252,26 +250,20 @@ public class User_Group_page extends Base_Class {
 	{ 
 		User_group.click(); 
 		sleep();
-		for (int k = 1; k <tdcount.size() - 1; k++) 
-		{ 
-			System.out.println(tdcount.size()); 
-			String UserGroup = row.getCell(0).toString(); 
-			Search_input.click();
-			Search_input.sendKeys(UserGroup);
-	  
-			driver.findElement(By.xpath("//td[@role='gridcell']")).click();
-	  
-	  // BaseTest.wait.until(ExpectedConditions.elementToBeClickable(btnDelete));
-			btn_Delete.click();
-	  
-	  // BaseTest.wait.until(ExpectedConditions.elementToBeClickable(btnYes));
-	  
-			btn_Delete_Yes.click();
-	  
+		String UserGroup = row.getCell(0).toString(); 
+		Search_input.sendKeys(UserGroup);
+		sleep();
+		Grid.click();
+		sleep();
+		btn_Delete.click();
+	  	sleep();
+		btn_Delete_Yes.click();
+		sleep();
+		User_group.click();
 	  }
 	  
-	  }
-	 
+	  
+
 
 
 }

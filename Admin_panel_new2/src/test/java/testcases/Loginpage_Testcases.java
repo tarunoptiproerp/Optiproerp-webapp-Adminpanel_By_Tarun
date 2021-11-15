@@ -45,7 +45,7 @@ public class Loginpage_Testcases extends Base_Class{
 	
 	
 	@Test(priority=1)
-	public void login() throws IOException, InterruptedException
+	public void Verify_login() throws IOException, InterruptedException
 	{
 		test = extent.createTest("TC1_Verify Admin login");
 		dash = logpage.login(prop.getProperty("Username"), prop.getProperty("Password"));

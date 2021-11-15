@@ -67,6 +67,7 @@ public class UserGroup_Testcases extends Base_Class {
 		sleep();
 		usrgrup.verify_search("xyx");
 		sleep();
+		test.log(Status.PASS, "Search are working Fine");
 	}
 
 	@Test(priority = 3)
@@ -76,6 +77,7 @@ public class UserGroup_Testcases extends Base_Class {
 		sleep();
 		usrgrup.verify_enable_filter();
 		sleep();
+		test.log(Status.PASS, "Filter are enabled");
 	}
 
 	@Test(priority = 4)
@@ -85,6 +87,7 @@ public class UserGroup_Testcases extends Base_Class {
 		sleep();
 		usrgrup.verify_enable_grouping();
 		sleep();
+		test.log(Status.PASS, "Group Filter are enabled");
 	}
 
 	@Test(priority = 5)
@@ -94,6 +97,7 @@ public class UserGroup_Testcases extends Base_Class {
 		sleep();
 		usrgrup.verify_export_Excel();
 		sleep();
+		test.log(Status.PASS, "File Exported successfully");
 	}
 
 	@Test(priority = 6)
@@ -108,10 +112,11 @@ public class UserGroup_Testcases extends Base_Class {
 			usrgrup.Verify_addUserGroup(ExcelUtil.getRowData(i));
 			sleep();
 		}
+		test.log(Status.PASS, "User group added successfully");
 	}
 
 	// (dependsOnMethods="Verify_AddUserGroup()", priority= 6)
-
+	
 	@Test(dependsOnMethods="Verify_AddUserGroup", priority= 7)
 	public void Verify_UpdateUserGroup() throws Exception {
 
@@ -124,10 +129,12 @@ public class UserGroup_Testcases extends Base_Class {
 			usrgrup.Verify_updateUserGroup(ExcelUtil.getRowData(i));
 			sleep();
 		}
+		test.log(Status.PASS, "User group Updated successfully");
 
 	}
 
-	@Test(dependsOnMethods={"Verify_AddUserGroup","Verify_UpdateUserGroup"},priority = 8)
+	@Test(priority = 8)
+	//dependsOnMethods={"Verify_AddUserGroup","Verify_UpdateUserGroup"},
 	public void Verify_DeleteUserGroup() throws InterruptedException, Exception {
 		test = extent.createTest("TC8_Verify DeleteUserGroup");
 		logpage.login(username, password);
@@ -135,10 +142,11 @@ public class UserGroup_Testcases extends Base_Class {
 
 		XSSFSheet sheet = ExcelUtil.setExcelFileSheet("UserGroupDelete");
 
-		for (int i = 1; i < sheet.getLastRowNum(); i++) {
+		for (int i = 1; i < sheet.getLastRowNum()+1; i++) {
 			usrgrup.Verify_searchAndDeleteUserGroup(ExcelUtil.getRowData(i));
 			sleep();
 		}
+		test.log(Status.PASS, "User group Deleted successfully");
 	}
 
 	@AfterMethod
@@ -150,5 +158,5 @@ public class UserGroup_Testcases extends Base_Class {
 	public void flushextent() {
 		extentflush();
 	}
- 
+
 }

@@ -3,17 +3,15 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="testcases.UserManagePage_Testcases">
+      <class name="continue_Testing.ContinueTesting">
         <methods>
           <include name="initExtentreport"/>
-          <include name="teardown"/>
+          <include name="Verify_UserManagement"/>
           <include name="flushextent"/>
           <include name="setup"/>
-          <include name="Verify_UpdateUserManagement"/>
-          <include name="Verify_AddUserManagement"/>
-          <include name="Verify_DeleteUserManagement"/>
+          <include name="teardown"/>
         </methods>
-      </class> <!-- testcases.UserManagePage_Testcases -->
+      </class> <!-- continue_Testing.ContinueTesting -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -67,6 +67,7 @@ public class RolePage_Testcases extends Base_Class{
 		sleep();
 		rpage.verify_search("xyx");
 		sleep();
+		test.log(Status.PASS, "Search is working fine");
 	}
 	
 	@Test(priority = 3)
@@ -76,6 +77,7 @@ public class RolePage_Testcases extends Base_Class{
 		sleep();
 		rpage.verify_enable_filter();
 		sleep();
+		test.log(Status.PASS, "filter is now Enabled");
 	}
 
 	@Test(priority = 4)
@@ -85,6 +87,7 @@ public class RolePage_Testcases extends Base_Class{
 		sleep();
 		rpage.verify_enable_grouping();
 		sleep();
+		test.log(Status.PASS, "Group filter is now Enabled");
 	}
 	
 	@Test(priority = 5)
@@ -94,6 +97,7 @@ public class RolePage_Testcases extends Base_Class{
 		sleep();
 		rpage.verify_export_Excel();
 		sleep();
+		test.log(Status.PASS, "File exported successfully");
 	}
 	
 	@Test(priority=6)
@@ -108,7 +112,7 @@ public class RolePage_Testcases extends Base_Class{
 			rpage.Verify_addRole(ExcelUtil.getRowData(i));
 			sleep();
 		}
-	
+		test.log(Status.PASS, "New Role Added successfully");
 	}
 	
 	@Test(priority=7)
@@ -121,6 +125,7 @@ public class RolePage_Testcases extends Base_Class{
 			rpage.Verify_updateRole(ExcelUtil.getRowData(i));
 			sleep();
 		}
+		test.log(Status.PASS, "Role Updated successfully");
 	}
 	
 	@Test(priority=8)
@@ -129,10 +134,11 @@ public class RolePage_Testcases extends Base_Class{
 		logpage.login(username, password);
 		sleep();
 		XSSFSheet sheet = ExcelUtil.setExcelFileSheet("RoleDelete");
-		for (int i = 1; i < sheet.getLastRowNum()- 1; i++) {
+		for (int i = 1; i < sheet.getLastRowNum()+1; i++) {
 			rpage.Verify_DeleteRoles(ExcelUtil.getRowData(i));
 			sleep();
 		}
+		test.log(Status.PASS, "Role Deleted successfully");
 	}
 	
 	

@@ -17,7 +17,8 @@ import org.openqa.selenium.support.PageFactory;
 import basepackage.Base_Class;
 import utility.ExcelUtil;
 
-public class User_Management_page extends Base_Class {
+
+public class User_Management_page extends Base_Class  {
 
 	WebDriver driver;
 	Robot robot;
@@ -62,7 +63,7 @@ public class User_Management_page extends Base_Class {
 	@FindBy(xpath = "/html[1]/body[1]/app-root[1]/div[1]/div[1]/app-user-management[1]/div[1]/div[2]/form[1]/div[1]/div[1]/kendo-splitter[1]/kendo-splitter-pane[1]/div[1]/div[2]/div[1]/div[1]/div[4]/input[1]")
 	WebElement reenter_password;
 
-	@FindBy(xpath = "/html/body/app-root/div/div/app-user-management/div/div[2]/form/div/div[1]/kendo-splitter/kendo-splitter-pane[1]/div/div[2]/div[2]/div/div[1]/kendo-dropdownlist/span")
+	@FindBy(xpath ="//kendo-dropdownlist[@id='user_group']/span[@class='k-dropdown-wrap k-state-default']")
 	WebElement user_group;
 
 	@FindBy(xpath = "/html/body/app-root/div/div/app-user-management/div/div[2]/form/div/div[1]/kendo-splitter/kendo-splitter-pane[1]/div/div[2]/div[2]/div/div[2]/kendo-dropdownlist/span")
@@ -101,9 +102,8 @@ public class User_Management_page extends Base_Class {
 	@FindBy(xpath = "/html/body/app-root/div/div/app-user-management/div/div[2]/div/div/kendo-grid/div/kendo-grid-list")
 	WebElement UM_list_grid;
 	
-	@FindBy(xpath = "//button[@class='btn btn-success btn-sm d-flex align-items-center mr-2']")
+	@FindBy(xpath = "/html/body/app-root/div/div/app-user-management/div/div[2]/form/div/div[2]/button[1]")
 	WebElement Update_btn;
-	
 	
 	@FindBy(xpath = "//button[contains(.,'Delete')]")
 	WebElement btn_Delete;
@@ -123,6 +123,10 @@ public class User_Management_page extends Base_Class {
 	
 	@FindBy(xpath = "/html/body/app-root/div/div/app-user-management/div/div[2]/form/div/div[2]/button[2]")
 	WebElement Cancelbtn;
+	
+	@FindBy(xpath = "//i[contains(@class,'k-icon k-i-copy')]")
+	WebElement copy_record;
+	
 	
 	public User_Management_page() throws IOException {
 		super();
@@ -207,6 +211,11 @@ public class User_Management_page extends Base_Class {
 		 robot.keyPress(KeyEvent.VK_J);
 		 robot.keyRelease(KeyEvent.VK_CONTROL);
 		 robot.keyRelease(KeyEvent.VK_J);
+		 
+		 robot.keyPress(KeyEvent.VK_CONTROL); // robot.keyPress(KeyEvent.VK_SHIFT);
+		 robot.keyPress(KeyEvent.VK_TAB); 
+		 robot.keyRelease(KeyEvent.VK_CONTROL); // robot.keyPress(KeyEvent.VK_SHIFT);
+		 robot.keyRelease(KeyEvent.VK_TAB); 
 	}
 
 	public void Verify_addUserManagement(XSSFRow row) throws InterruptedException, AWTException {
@@ -214,6 +223,7 @@ public class User_Management_page extends Base_Class {
 		User_management.click();
 		sleep();
 		btnAdd.click();
+		pageload();
 		user_id.sendKeys(row.getCell(0).toString());
 		sleep();
 		user_name.sendKeys(row.getCell(1).toString());
@@ -221,23 +231,31 @@ public class User_Management_page extends Base_Class {
 		password.sendKeys(row.getCell(2).toString());
 		sleep();
 		reenter_password.sendKeys(row.getCell(3).toString());
-		sleep();
-		user_group.sendKeys(row.getCell(4).toString());
-		sleep();
-		mapped_SAP_B1_user.sendKeys(row.getCell(5).toString());
-		sleep();
+		/*
+		 * sleep(); websiteload();
+		 */
+		
+		/*
+		 * user_group.sendKeys(row.getCell(4).toString()); sleep();
+		 * mapped_SAP_B1_user.sendKeys(row.getCell(5).toString()); sleep();
+		 */
 		/*
 		 * mapped_SAP_B1_password.clear();
 		 * mapped_SAP_B1_password.sendKeys(row.getCell(6).toString());
 		 */
+		
+		robot(KeyEvent.VK_TAB);
+		robot(KeyEvent.VK_DOWN);
+		robot(KeyEvent.VK_DOWN);
+		sleep();
 		Tenant.sendKeys(row.getCell(6).toString());
 		sleep();
 		spliter.click();
 	//	Status.click(); For status need to check 
+		sleep();
 		select_DB_Checkbox.click();
 		expand.click();
 		sleep();
-		pageload();
 		usertype.sendKeys(row.getCell(7).toString());
 		Business_partner.click();
 		sleep();
@@ -246,9 +264,10 @@ public class User_Management_page extends Base_Class {
 		sleep();
 		product_table.findElement(By.xpath("(//span[contains(@class,'checkbox')])[4]")).click();
 		sleep();
-		Savebtn.click();
+		Savebtn.click();	
 	}
 
+	
 	public void Verify_updateUsermanagement(XSSFRow row) throws Exception {
 		User_management.click();
 		ExcelUtil.setExcelFileSheet("UserManagUpdate");
@@ -256,9 +275,10 @@ public class User_Management_page extends Base_Class {
 		sleep();
 		Search_input.click();
 		Search_input.clear();
-		Search_input.sendKeys(ExcelUtil.getRowData(2).getCell(0).toString());
+		Search_input.sendKeys(row.getCell(0).toString());
 
 		UM_list_grid.findElement(By.xpath("/html/body/app-root/div/div/app-user-management/div/div[2]/div/div/kendo-grid/div/kendo-grid-list/div/div[1]/table/tbody/tr[1]")).click();
+		sleep();
 		Update_btn.click();
 	}
 
