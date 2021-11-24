@@ -8,7 +8,7 @@ public class Tenant_page extends Base_Class{
 
 	public Tenant_page() throws IOException {
 		super();
-		// TODO Auto-generated constructor stub
+		
 	}
 
 }

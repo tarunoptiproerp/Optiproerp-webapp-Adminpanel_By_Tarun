@@ -108,9 +108,12 @@ public class UserManagePage_Testcases extends Base_Class {
 		XSSFSheet sheet = ExcelUtil.setExcelFileSheet("UserManagAdd");
 		
 		for (int i = 1; i < sheet.getLastRowNum() + 1; i++) {
+			
 			usrmang.Verify_addUserManagement(ExcelUtil.getRowData(i));
 			refresh();
 			sleep();
+			Takescreenshot("Addusermanagement"+i);
+			
 		}
 		test.log(Status.PASS, "User is added successfully");
 		

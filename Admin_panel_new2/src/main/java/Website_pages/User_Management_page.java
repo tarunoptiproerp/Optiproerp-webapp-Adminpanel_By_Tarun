@@ -127,6 +127,11 @@ public class User_Management_page extends Base_Class  {
 	@FindBy(xpath = "//i[contains(@class,'k-icon k-i-copy')]")
 	WebElement copy_record;
 	
+	@FindBy(xpath = "/html/body/app-root/div/div/app-user-management/div/div[2]/form/div/div[1]/kendo-splitter/kendo-splitter-pane[2]/div/div/div[1]/kendo-grid/div/div/div/table/thead/tr[2]/td[3]/kendo-grid-string-filter-cell/kendo-grid-filter-wrapper-cell/input")
+	WebElement db_search_field;
+	
+	@FindBy(xpath = "/html/body/app-root/div/div/app-user-management/div/div[2]/form/div/div[1]/kendo-splitter/kendo-splitter-pane[2]/div/div/div[1]/kendo-grid/kendo-grid-toolbar/div/label[1]/span[1]")
+	WebElement company_enable_filter;
 	
 	public User_Management_page() throws IOException {
 		super();
@@ -207,18 +212,18 @@ public class User_Management_page extends Base_Class  {
 		 
 		 export_button.click();
 		 sleep();
-		 robot.keyPress(KeyEvent.VK_CONTROL); 
-		 robot.keyPress(KeyEvent.VK_J);
-		 robot.keyRelease(KeyEvent.VK_CONTROL);
-		 robot.keyRelease(KeyEvent.VK_J);
-		 
-		 robot.keyPress(KeyEvent.VK_CONTROL); // robot.keyPress(KeyEvent.VK_SHIFT);
-		 robot.keyPress(KeyEvent.VK_TAB); 
-		 robot.keyRelease(KeyEvent.VK_CONTROL); // robot.keyPress(KeyEvent.VK_SHIFT);
-		 robot.keyRelease(KeyEvent.VK_TAB); 
+			/*
+			 * robot.keyPress(KeyEvent.VK_CONTROL); robot.keyPress(KeyEvent.VK_J);
+			 * robot.keyRelease(KeyEvent.VK_CONTROL); robot.keyRelease(KeyEvent.VK_J);
+			 */
+			/*
+			 * robot.keyPress(KeyEvent.VK_CONTROL); // robot.keyPress(KeyEvent.VK_SHIFT);
+			 * robot.keyPress(KeyEvent.VK_TAB); robot.keyRelease(KeyEvent.VK_CONTROL); //
+			 * robot.keyPress(KeyEvent.VK_SHIFT); robot.keyRelease(KeyEvent.VK_TAB);
+			 */
 	}
 
-	public void Verify_addUserManagement(XSSFRow row) throws InterruptedException, AWTException {
+	public void Verify_addUserManagement(XSSFRow row) throws InterruptedException, AWTException, IOException {
 
 		User_management.click();
 		sleep();
@@ -245,7 +250,9 @@ public class User_Management_page extends Base_Class  {
 		 */
 		
 		robot(KeyEvent.VK_TAB);
+		sleep();
 		robot(KeyEvent.VK_DOWN);
+		sleep();
 		robot(KeyEvent.VK_DOWN);
 		sleep();
 		Tenant.sendKeys(row.getCell(6).toString());
@@ -253,10 +260,15 @@ public class User_Management_page extends Base_Class  {
 		spliter.click();
 	//	Status.click(); For status need to check 
 		sleep();
+		
+		company_enable_filter.click();
+		sleep();
+		db_search_field.sendKeys(row.getCell(8).toString());
 		select_DB_Checkbox.click();
 		expand.click();
 		sleep();
 		usertype.sendKeys(row.getCell(7).toString());
+		sleep();
 		Business_partner.click();
 		sleep();
 		robot(KeyEvent.VK_DOWN);
@@ -265,6 +277,7 @@ public class User_Management_page extends Base_Class  {
 		product_table.findElement(By.xpath("(//span[contains(@class,'checkbox')])[4]")).click();
 		sleep();
 		Savebtn.click();	
+		Takescreenshot("Addusermanagement");
 	}
 
 	

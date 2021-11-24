@@ -191,14 +191,15 @@ public class User_Group_page extends Base_Class {
 		 sleep();
 		 export_button.click();
 		 sleep();
-		 robot.keyPress(KeyEvent.VK_CONTROL); 
-		 robot.keyPress(KeyEvent.VK_J);
-		 robot.keyRelease(KeyEvent.VK_CONTROL);
-		 robot.keyRelease(KeyEvent.VK_J);
-		 robot.keyPress(KeyEvent.VK_CONTROL); // robot.keyPress(KeyEvent.VK_SHIFT);
-		 robot.keyPress(KeyEvent.VK_TAB); 
-		 robot.keyRelease(KeyEvent.VK_CONTROL); // robot.keyPress(KeyEvent.VK_SHIFT);
-		 robot.keyRelease(KeyEvent.VK_TAB); 
+			/*
+			 * robot.keyPress(KeyEvent.VK_CONTROL); robot.keyPress(KeyEvent.VK_J);
+			 * robot.keyRelease(KeyEvent.VK_CONTROL); robot.keyRelease(KeyEvent.VK_J);
+			 */
+			/*
+			 * robot.keyPress(KeyEvent.VK_CONTROL); // robot.keyPress(KeyEvent.VK_SHIFT);
+			 * robot.keyPress(KeyEvent.VK_TAB); robot.keyRelease(KeyEvent.VK_CONTROL); //
+			 * robot.keyPress(KeyEvent.VK_SHIFT); robot.keyRelease(KeyEvent.VK_TAB);
+			 */
 			/*
 			 * robot.keyRelease(KeyEvent.VK_CONTROL); // robot.keyPress(KeyEvent.VK_SHIFT);
 			 * robot.keyRelease(KeyEvent.VK_F5);
@@ -213,10 +214,12 @@ public class User_Group_page extends Base_Class {
 		
 		group_admin_name.sendKeys(row.getCell(0).toString());
 		group_admin_Description.sendKeys(row.getCell(1).toString());
+		sleep();
 		// drpRole.click();
 		System.out.println(row.getCell(2).toString());
 		mapped_SAP_B1_user.sendKeys(row.getCell(2).toString());
 		// drpRole.click();
+		sleep();
 		mapped_SAP_B1_password.sendKeys(row.getCell(3).toString());
 		sleep();
 		// Tenant.sendKeys(row.getCell(4).toString());
@@ -235,10 +238,13 @@ public class User_Group_page extends Base_Class {
 		Grid.click();
 		sleep();
 		group_admin_Description.clear();
+		sleep();
 		group_admin_Description.sendKeys(row.getCell(1).toString());
 		sleep();
 		mapped_SAP_B1_user.click();
+		sleep();
 		mapped_SAP_B1_user.sendKeys(row.getCell(2).toString());
+		sleep();
 		mapped_SAP_B1_password.sendKeys(row.getCell(3).toString());
 		sleep();
 		btnSave.click();

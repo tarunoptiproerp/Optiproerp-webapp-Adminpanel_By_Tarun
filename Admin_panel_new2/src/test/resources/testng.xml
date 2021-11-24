@@ -8,6 +8,7 @@
       <class name="testcases.UserGroup_Testcases"/>
       <class name="testcases.UserManagePage_Testcases"/>
       <class name="testcases.RolePage_Testcases"/>
+      <class name="testcases.Authorization_Testcases"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

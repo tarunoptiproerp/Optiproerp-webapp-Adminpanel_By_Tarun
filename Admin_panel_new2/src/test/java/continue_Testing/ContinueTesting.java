@@ -14,6 +14,7 @@ import org.testng.annotations.Test;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
 
+import Website_pages.Authorization_page;
 import Website_pages.Login_page;
 import Website_pages.Roles_page;
 import Website_pages.User_Group_page;
@@ -28,6 +29,7 @@ public class ContinueTesting extends Base_Class {
 	public ExtentTest test;
 	public User_Management_page usrmang;
 	public Roles_page rpage;
+	public Authorization_page Auth;
 	
 	public ContinueTesting() throws IOException {
 		super();
@@ -46,6 +48,7 @@ public class ContinueTesting extends Base_Class {
 	public void setup() throws Exception {
 		initialzation();
 		logpage = new Login_page();
+		
 		usrgrup = new User_Group_page();
 		usrgrup = PageFactory.initElements(driver, User_Group_page.class);
 
@@ -55,6 +58,8 @@ public class ContinueTesting extends Base_Class {
 		rpage = new Roles_page();
 		rpage = PageFactory.initElements(driver, Roles_page.class);
 		
+		Auth = new Authorization_page();
+		Auth = PageFactory.initElements(driver, Authorization_page.class);	
 	}
 	
 	
@@ -87,6 +92,7 @@ public class ContinueTesting extends Base_Class {
 			usrgrup.Verify_addUserGroup(ExcelUtil.getRowData(i));
 			sleep();
 			refresh();
+			Takescreenshot("Addusergroup"+i);
 		}
 		test.log(Status.PASS, "User group added successfully");
 		
@@ -97,6 +103,7 @@ public class ContinueTesting extends Base_Class {
 			usrgrup.Verify_updateUserGroup(ExcelUtil.getRowData(i));
 			sleep();
 			refresh();
+			Takescreenshot("Updateusergroup"+i);
 		}
 		test.log(Status.PASS, "User group Updated successfully");
 		
@@ -106,6 +113,7 @@ public class ContinueTesting extends Base_Class {
 			usrgrup.Verify_searchAndDeleteUserGroup(ExcelUtil.getRowData(i));
 			sleep();
 			refresh();
+			Takescreenshot("Deleteusergroup"+i);
 		}
 		test.log(Status.PASS, "User group Deleted successfully");
 			
@@ -143,6 +151,7 @@ public class ContinueTesting extends Base_Class {
 			usrmang.Verify_addUserManagement(ExcelUtil.getRowData(i));
 			sleep();
 			refresh();
+			Takescreenshot("Add_user_management"+i);
 		}
 		test.log(Status.PASS, "User Mang is added successfully");
 		
@@ -153,6 +162,7 @@ public class ContinueTesting extends Base_Class {
 			usrmang.Verify_updateUsermanagement(ExcelUtil.getRowData(i));
 			sleep();
 			refresh();
+			Takescreenshot("Update_user_management"+i);
 		}
 		test.log(Status.PASS, "User Mang is Updated successfully");
 		sleep();
@@ -161,6 +171,7 @@ public class ContinueTesting extends Base_Class {
 		for (int i = 1; i < sheet2.getLastRowNum()+1; i++) {
 			usrmang.Verify_searchAndDeleteUsermanage(ExcelUtil.getRowData(i));
 			sleep();
+			Takescreenshot("Delete_user_management"+i);
 		}
 		test.log(Status.PASS, "User Mang is Deleted successfully");
 		
@@ -198,6 +209,7 @@ public class ContinueTesting extends Base_Class {
 			rpage.Verify_addRole(ExcelUtil.getRowData(i));
 			refresh();
 			sleep();
+			Takescreenshot("Add_Roles"+i);
 		}
 		test.log(Status.PASS, "New Role Added successfully");
 		
@@ -206,6 +218,7 @@ public class ContinueTesting extends Base_Class {
 			rpage.Verify_updateRole(ExcelUtil.getRowData(i));
 			refresh();
 			sleep();
+			Takescreenshot("Update_Roles"+i);
 		}
 		test.log(Status.PASS, "Role Updated successfully");
 		
@@ -214,11 +227,68 @@ public class ContinueTesting extends Base_Class {
 			rpage.Verify_DeleteRoles(ExcelUtil.getRowData(i));
 			sleep();
 			refresh();
+			Takescreenshot("Delete_Roles"+i);
 		}
 		test.log(Status.PASS, "Role Deleted successfully");
 		
 	}
 	
+	@Test(priority=3)
+	public void Verify_Authorization() throws Exception
+	{
+		test = extent.createTest("Verify Role page");
+		logpage.login(username, password);
+		sleep();
+		
+		XSSFSheet sheet = ExcelUtil.setExcelFileSheet("AuthAdd");
+		for (int i = 1; i < sheet.getLastRowNum() + 1; i++) {
+			Auth.Add_auth(ExcelUtil.getRowData(i));
+			refresh();
+			sleep();
+		
+		}
+		test.log(Status.PASS, "New Role Added successfully");
+		
+		XSSFSheet sheet1 = ExcelUtil.setExcelFileSheet("AuthUpdate");
+		for (int i = 1; i < sheet1.getLastRowNum()+1; i++) {
+			Auth.Update_auth(ExcelUtil.getRowData(i));
+			sleep();
+			refresh();
+			Takescreenshot("UpdateAuth"+i);
+		}
+		
+		XSSFSheet sheet2 = ExcelUtil.setExcelFileSheet("AuthDelete");
+		for (int i = 1; i < sheet2.getLastRowNum()+1; i++) {
+			Auth.Delete_auth(ExcelUtil.getRowData(i));
+			sleep();
+			refresh();
+			Takescreenshot("DeleteAuth"+i);
+		}	
+		
+		sleep();
+		Auth.verify_export_Excel();
+		test.log(Status.PASS, "Excel is now exported");
+		
+		sleep();
+		String Title = Auth.verify_page_title();
+		Assert.assertEquals(Title, "User Authorization", "Title is correct");
+		test.log(Status.PASS, "Title is correct");
+		
+		sleep();
+		Auth.verify_search("xyx");
+		test.log(Status.PASS, "search is displaying result");
+		sleep();
+		
+		sleep();
+		Auth.verify_enable_filter();
+		test.log(Status.PASS, "Filter is now enabled");
+		
+		sleep();
+		Auth.verify_enable_grouping();
+		sleep();
+		test.log(Status.PASS, "grouping is now enabled");
+		
+	}
 	
 	
 	@AfterMethod

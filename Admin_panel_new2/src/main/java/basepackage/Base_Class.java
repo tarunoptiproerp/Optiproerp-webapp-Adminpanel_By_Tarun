@@ -1,5 +1,6 @@
 package basepackage;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -7,6 +8,10 @@ import java.sql.Driver;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -132,6 +137,21 @@ public class Base_Class {
 	public static void extentflush()
 	{
 		extent.flush();
+	}
+	
+	
+	public void Takescreenshot(String image) throws IOException
+	{
+		TakesScreenshot ts = (TakesScreenshot)driver;
+		File source = ts.getScreenshotAs(OutputType.FILE);
+		FileUtils.copyFile(source, new File("./Screenshots/"+image+".png"));
+		System.out.println("the Screenshot is taken");
+	}
+	
+	public void Execute_java_script(String Script)
+	{
+		 JavascriptExecutor js = (JavascriptExecutor) driver;
+		 js.executeScript(Script);
 	}
 
 }
