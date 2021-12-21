@@ -6,9 +6,10 @@
       <class name="testcases.Loginpage_Testcases"/>
       <class name="testcases.Dashboardpage_Testcases"/>
       <class name="testcases.UserGroup_Testcases"/>
-      <class name="testcases.UserManagePage_Testcases"/>
       <class name="testcases.RolePage_Testcases"/>
       <class name="testcases.Authorization_Testcases"/>
+      <class name="testcases.Tenant_Testcases"/>
+      <class name="testcases.UserManagePage_Testcases"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

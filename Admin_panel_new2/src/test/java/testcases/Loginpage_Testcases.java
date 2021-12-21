@@ -2,6 +2,8 @@ package testcases;
 
 import java.io.IOException;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.core.Logger;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
@@ -24,10 +26,10 @@ public class Loginpage_Testcases extends Base_Class{
 	public Dashboard_page dash;
 	public Login_page logpage;
 	public ExtentTest test;
+	public static Logger logger;
 	
 	public Loginpage_Testcases() throws IOException {
-		super();
-		
+		super();	
 	}
 	
 	@BeforeTest
@@ -41,14 +43,17 @@ public class Loginpage_Testcases extends Base_Class{
 	{
 		initialzation();
 		logpage = new Login_page();
+		logger = (Logger) LogManager.getLogger(Loginpage_Testcases.class);
 	}
 	
 	
 	@Test(priority=1)
 	public void Verify_login() throws IOException, InterruptedException
 	{
+		
 		test = extent.createTest("TC1_Verify Admin login");
 		dash = logpage.login(prop.getProperty("Username"), prop.getProperty("Password"));
+		
 		test.log(Status.PASS, "Admin login Successfully");
 	}
 	

@@ -2,6 +2,8 @@ package Website_pages;
 
 import java.io.IOException;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.core.Logger;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -11,6 +13,7 @@ import basepackage.Base_Class;
 
 public class Login_page extends Base_Class {
 	
+	public static final Logger logger = (Logger) LogManager.getLogger(Login_page.class);
 
 	@FindBy(xpath="/html/body/app-root/div/div/app-login/section/div/div/div/div[1]/img")
 	public
@@ -39,9 +42,11 @@ public class Login_page extends Base_Class {
 	
 	public Dashboard_page login(String username, String pwd) throws IOException
 	{
+		
 		user_name.sendKeys(username);
 		Password.sendKeys(pwd);
 		Submit.click();
+		
 		
 		return new Dashboard_page();
 	}
