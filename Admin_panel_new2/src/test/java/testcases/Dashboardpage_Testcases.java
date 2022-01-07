@@ -26,6 +26,7 @@ import basepackage.Base_Class;
 public class Dashboardpage_Testcases extends Base_Class {
 	
 	public Login_page logpage;
+	public Dashboard_page dash;
 	public User_Group_page Usrgrp;
 	public User_Management_page usrmang;
 	public Roles_page role;
@@ -34,7 +35,7 @@ public class Dashboardpage_Testcases extends Base_Class {
 	public Connected_Users_page conusr;
 	public Configuration_page config;
 	public ExtentTest test;
-	public Dashboard_page dash;
+	
 	
 	
 	String username = prop.getProperty("Username");

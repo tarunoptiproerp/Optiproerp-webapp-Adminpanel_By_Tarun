@@ -64,12 +64,12 @@ public class Base_Class {
 		String browser = prop.getProperty("Browser_Name");
 		if(browser.equals("Chrome"))
 		{
-			System.setProperty("webdriver.chrome.driver", "C:\\Users\\User1\\git\\Admin_panel_By_Tarun\\Admin_panel_new2\\browser_driver\\chromedriver_96.exe");
+			System.setProperty("webdriver.chrome.driver", ("user.dir")+"\\browser_driver\\chromedriver_96.exe");
 			driver = new ChromeDriver();
 			
 		}else if(browser.equals("FF"))
 			{
-				System.setProperty("webdriver.gecko.driver", "C:\\Users\\User1\\git\\Admin_panel_By_Tarun\\Admin_panel_new2\\browser_driver\\geckodriver.exe");
+				System.setProperty("webdriver.gecko.driver",("user.dir")+"\\browser_driver\\geckodriver.exe");
 				driver = new FirefoxDriver();
 				
 		}else if(browser.equals("Edge"))
